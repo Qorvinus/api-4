@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Build a PC!</title>
+    <link href="index.css" rel="stylesheet" type="text/css" />
+    <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+    <script text="text/javascript" src="database.js"></script>
+  </head>
+  <body>
+    <main class="home-page" role="main">
+      <div class="js-main-container main-container">
+        <form id="js-start">
+          <input type="submit" value="Build a PC!" class="js-star-button start-button">
+        </form>
+      </div>
+      <div class="js-render render hidden">
+        <form id="js-pc-parts">
+          <label for="cpu">Select a CPU</label>
+            <select name="cpu" id="js-cpu" class="drop-down" onchange="onSelectCpu(this)">
+            </select>
+            <div id="js-render-cpu"></div>
+            <div id="js-render-cpu-price"></div>
+          <label for="mobo">Select a Motherboard</label>
+            <select name="mobo" id="js-mobo" class="drop-down" onchange="onSelectMobo(this)">
+            </select>
+            <div id="js-render-mobo"></div>
+            <div id="js-render-mobo-price"></div>
+        </form>
+        <div id="js-render-info"></div>
+      </div>
+      <div id="myModal" class="modal hidden">
+        <div class="modal-content">
+        </div>
+      </div>
+    </main>
+    <script src="index.js"></script>
+  </body>
+</html>
