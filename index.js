@@ -3,13 +3,13 @@
 //https:www.googleapis.com/youtube/v3/search?q=query&part=snippet&masResults=3&key=ytkey
 //responseJson.items.thumbnail.default or medium or high.url => thumbnail
 //responseJson.items.id.videoId => https://www.youtube.com/embed/videoId
-const ytkey = 'AIzaSyA33xkrHuTLHRDvibawSxjrekL4GIX66TI';
+const ytkey = '';
 
 const ytUrl = 'https://www.googleapis.com/youtube/v3/search';
 
 //https://api.bestbuy.com/v1/products/sku.json?apiKey=bbkey
 //responseJson.regularPrice => price
-const bbkey = 'tRN7x3ANSvBOc14AAe9lhXb3';
+const bbkey = '';
 
 const bbUrl = 'https://api.bestbuy.com/v1/products/';
 
