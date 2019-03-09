@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>Build a PC!</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link href="index.css" rel="stylesheet" type="text/css" />
     <script
   src="https://code.jquery.com/jquery-3.3.1.min.js"
@@ -11,33 +12,83 @@
   crossorigin="anonymous"></script>
     <script text="text/javascript" src="database.js"></script>
   </head>
+
   <body>
+      <header role="header">
+          <span class="header js-header">Build a computer yourself!</span>
+      </header>
     <main class="home-page" role="main">
       <div class="js-main-container main-container">
+      <p class="welcome col-4">
+        Welcome to Build a PC!  Here you'll choose all the necessary parts to assemble a functional PC together.  With each selection you'll be shown some YouTube review videos on that particular product as well as pricing from BestBuy.  After you're all done you'll also be linked to some YouTube videos of how to build a PC.  Good luck and happy building!
+      </p>
         <form id="js-start">
-          <input type="submit" value="Build a PC!" class="js-star-button start-button">
+          <div class="start">
+            <input type="submit" value="Build a PC!" class="js-start-button start-button">
+          </div>
         </form>
       </div>
-      <div class="js-render render hidden">
+      <div class="js-render render col-4 hidden">
+        <p>Please select Intel or AMD</p>
+          <label for="intel" class="hover">
+              <input type="radio" id="intel" name="cpuType" value="Intel" checked>
+              <span>Intel</span>
+            </label>
+            <label for="amd" class="hover">
+              <input type="radio" id="amd" name="cpuType" value="AMD">
+              <span>AMD</span>
+            </label>  
         <form id="js-pc-parts">
-          <label for="cpu">Select a CPU</label>
-            <select name="cpu" id="js-cpu" class="drop-down" onchange="onSelectCpu(this)">
+          <label for="cpu" class="select">Select a CPU</label>
+            <select name="cpu" id="js-cpu" class="drop-down" required>
             </select>
-            <div id="js-render-cpu"></div>
+            <div id="js-render-cpu" class="render-select"></div>
             <div id="js-render-cpu-price"></div>
-          <label for="mobo">Select a Motherboard</label>
-            <select name="mobo" id="js-mobo" class="drop-down" onchange="onSelectMobo(this)">
+          <label for="mobo" class="select">Select a Motherboard</label>
+            <select name="mobo" id="js-mobo" class="drop-down" required>
             </select>
             <div id="js-render-mobo"></div>
             <div id="js-render-mobo-price"></div>
+          <label for="gpu" class="select">Select a Graphics Card</label>
+            <select name="gpu" id="js-gpu" class="drop-down" required>
+            </select>
+            <div id="js-render-gpu"></div>
+            <div id="js-render-gpu-price"></div>
+          <label for="ssd" class="select">Select a Storage SSD</label>
+            <select name="ssd" id="js-ssd" class="drop-down" required>
+            </select>
+            <div id="js-render-ssd"></div>
+            <div id="js-render-ssd-price"></div>
+          <label for="psu" class="select">Select a Power Supply</label>
+            <select name="psu" id="js-psu" class="drop-down" required>
+            </select>
+            <div id="js-render-psu"></div>
+            <div id="js-render-psu-price"></div>
+          <label for="ram" class="select">Select RAM</label>
+            <select name="ram" id="js-ram" class="drop-down" required>
+            </select>
+            <div id="js-render-ram"></div>
+            <div id="js-render-ram-price"></div>
+          <label for="cases" class="select">Select a Case</label>
+            <select name="cases" id="js-cases" class="drop-down" required>
+            </select>
+            <div id="js-render-cases"></div>
+            <div id="js-render-cases-price"></div>
+            <input type="submit" value="Submit Build" class="js-submit-build submit-build">
         </form>
-        <div id="js-render-info"></div>
+      <div id="js-error"></div>
       </div>
+      <div class="js-finish finish col-4 hidden">
+        <p>Here are some "How to build a PC" videos!  Good luck and happy building!</p>
+        <div id="js-render-info"></div>
+        <div id="js-render-total-price"><div>
+      </div>
+    </main>
       <div id="myModal" class="modal hidden">
         <div class="modal-content">
         </div>
       </div>
-    </main>
     <script src="index.js"></script>
+    <footer role="contentinfo">© 2019 Build a PC</footer>
   </body>
 </html>

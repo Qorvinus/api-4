@@ -1,9 +1,145 @@
+body * {
+  box-sizing: border-box;
+}
+
+header {
+  background-color: rgba(0, 0, 0, 0.8);
+  font-size: 36px;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  padding: 15px;
+  height: 65px;
+  text-decoration: none !important;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: url(mobo.jpg) no-repeat;
+  background-size: cover;
+  background-color: #DDDDDD;
+  background-attachment: fixed;
+  background-position: center;
+  font-family: 'Roboto', sans-serif;
+  font-weight: light;
+  color: black;
+  height: 100%;
+}
+
+footer {
+  margin-top: 50px;
+  text-align: center;
+  position: relative;
+  top: calc(100% - 25px);
+  width: 100%;
+  color: white;
+  font-size: 20px;
+  height: 25px;
+  -webkit-text-stroke: 0.5px black;
+}
+
+.welcome, .finish {
+  font-size: 18px;
+  color: white;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 25px;
+  background-color: rgba(0, 0, 0, 0.50);
+  border-radius: 5px;
+}
+
+.render {
+  animation: slide-up 1s ease;
+  text-align: center;
+}
+
+.js-render {
+  border-radius: 5px;
+  background: rgba(0,0,0,.85);
+  color: white;
+  width: 75%;
+  text-align: center;
+  margin: 25px auto 0;
+}
+
+@keyframes slide-up {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.myBtn, .js-price, img {
+  margin-top: 5px;
+  animation: slide-up 0.5s ease;
+}
+
+.start, .finish {
+  text-align: center;
+}
+
+.finish {
+  margin-top: 20px;
+}
+
+.start-button, .submit-build {
+  border-radius: 5px;
+  background: #00B233;
+  padding: 10px 20px 10px 20px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  font-size: 18px;
+  color: white;
+}
+
+main {
+  height: calc(100% - 65px - 35px);
+  overflow: auto;
+}
+
+#js-error {
+  color: red;
+}
+
+.start-button:hover, .submit-build:hover {
+  background: blue;
+}
+
 .hidden {
   display: none;
 }
 
-label, select {
+input, .hover {
+  cursor: pointer;
+}
+
+select {
+  width: 66%;
+  margin: 0 auto;
+}
+
+.select, select {
   display: block;
+  padding-bottom: 5px;
+}
+
+.select {
+  padding-top: 20px;
+}
+
+.submit-build {
+  margin: 20px 0 20px;
 }
 
 /* The Modal (background) */
@@ -44,4 +180,38 @@ label, select {
   color: #000000;
   text-decoration: none;
   cursor: pointer;
+}
+
+@media screen and (max-width: 640px) {
+
+  main, header {
+    font-size: 14px;
+  }
+
+  .col-3, .col-4, .col-6, .col-12, {
+    width: 100%;
+  }
+}
+
+/* Non-mobile, grid */
+@media screen and (min-width: 641px) {
+
+  .col-3 {
+    width: 25%;
+  }
+
+  /* 4 columns */
+  .col-4 {
+    width: 33%;
+  }
+
+  /* 6 columns */
+  .col-6 {
+    width: 50%;
+  }
+
+  /* 12 columns */
+  .col-12 {
+    width: 100%;
+  }
 }
