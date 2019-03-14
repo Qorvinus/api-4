@@ -10,15 +10,15 @@ I am a web application to help users choose the required components to build a f
 
 Landing Page:
 
-![landing page](screenshots/landing.jpg)
+![landing page](landing.jpg)
 
 Selection page:
 
-![selection page](screenshots/selection.jpg)
+![selection page](selection.jpg)
 
 Final page:
 
-![final page](screenshots/final.jpg)
+![final page](final.jpg)
 
 ## Built with
 
