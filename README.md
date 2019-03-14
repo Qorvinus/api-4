@@ -10,15 +10,15 @@ I am a web application to help users choose the required components to build a f
 
 Landing Page:
 
-![landing page](screenshots/landing.jpg)
+![landing page](https://github.com/Qorvinus/api-4/blob/master/screenshots/landing.JPG)
 
 Selection page:
 
-![selection page](screenshots/selection.jpg)
+![selection page](https://github.com/Qorvinus/api-4/blob/master/screenshots/selection.JPG)
 
 Final page:
 
-![final page](screenshots/final.jpg)
+![final page](https://github.com/Qorvinus/api-4/blob/master/screenshots/finish.JPG)
 
 ## Built with
 
