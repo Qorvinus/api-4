@@ -3,13 +3,13 @@
 //https:www.googleapis.com/youtube/v3/search?q=query&part=snippet&masResults=3&key=ytkey
 //responseJson.items.thumbnail.default or medium or high.url => thumbnail
 //responseJson.items.id.videoId => https://www.youtube.com/embed/videoId
-const ytkey = '';
+const ytkey = 'AIzaSyA33xkrHuTLHRDvibawSxjrekL4GIX66TI';
 
 const ytUrl = 'https://www.googleapis.com/youtube/v3/search';
 
 //https://api.bestbuy.com/v1/products/sku.json?apiKey=bbkey
 //responseJson.regularPrice => price
-const bbkey = '';
+const bbkey = 'tRN7x3ANSvBOc14AAe9lhXb3';
 
 const bbUrl = 'https://api.bestbuy.com/v1/products/';
 
@@ -93,6 +93,7 @@ function onIntelSelection() {
     // disable these
     $("#js-cpu option[value = 'AMD Ryzen 5 2600']").prop('disabled',true);
     $("#js-cpu option[value = 'AMD Ryzen 7 2700']").prop('disabled',true);
+    resetCpuMobo();
   });
 }
 
@@ -112,12 +113,35 @@ function onAmdSelection() {
     // disable these
     $("#js-cpu option[value = 'AMD Ryzen 5 2600']").prop('disabled',false);
     $("#js-cpu option[value = 'AMD Ryzen 7 2700']").prop('disabled',false);
+    resetCpuMobo();
   });
 }
 
+function resetCpuMobo() {
+  $('#js-cpu')[0].selectedIndex = 0;
+  $('#js-mobo')[0].selectedIndex = 0;
+  emptyRender();
+}
+
+function emptyRender() {
+  $('#js-render-cpu').empty();
+  $('#js-render-mobo').empty();
+  $('#js-render-cpu-price').empty();
+  $('#js-render-mobo-price').empty();
+}
+
 function onSelection(query, sku, type) {
-  getYoutube(query, type);
-  getBestBuyPrice(sku, type);
+  if (sku === "off") {
+    isEmpty(type);
+  } else {
+    getYoutube(query, type);
+    getBestBuyPrice(sku, type);
+  };
+}
+
+function isEmpty(type) {
+  $(`#js-render-${type}`).empty();
+  $(`#js-render-${type}-price`).empty();
 }
 
 function getYoutube(query, type) {
