@@ -1,6 +1,6 @@
 # Build a PC!
 
-Check out Build a PC here: [Build a PC!](https://api-16--corvinus.repl.co "Build a PC!")
+Check out Build a PC here: [Build a PC!](https://build-a-pc--corvinus.repl.co/ "Build a PC!")
 
 ## What do I do?
 
