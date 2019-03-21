@@ -12,6 +12,13 @@ function startBuild(event) {
   });
 }
 
+function goHome() {
+  $('.js-header').on('click', function(event) {
+    event.preventDefault();
+    location.reload();
+  });
+}
+
 function listenSelection() {
   Object.keys(STORE).forEach(type => {
     onChange(type);
@@ -289,6 +296,7 @@ function startNew() {
 }
 
 function onStart() {
+  goHome();
   startBuild();
   submitBuild();
 }
