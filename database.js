@@ -1,7 +1,7 @@
 
 const STORE = {
   cpu: {
-    'Select a CPU': '',
+    'Select a CPU': 'off',
     'Intel i3-8100': '6162970',
     'Intel i5-8400': '6163019',
     'Intel i7-8700': '6162975',
@@ -9,7 +9,7 @@ const STORE = {
     'AMD Ryzen 7 2700': '6234511'
   },
   mobo: {
-    'Select a Motherboard': '',
+    'Select a Motherboard': 'off',
     'ASUS-ROG STRIX H370-F GAMING':'6239836',
     'ASUS-TUF Z390-PLUS GAMING': '6311233',
     'ASUS-ROG MAXIMUS XI HERO': '6306415',
@@ -18,7 +18,7 @@ const STORE = {
     'ASUS-ROG CROSSHAIR VII HERO': '6311236'
   },
   gpu: {
-    'Select a Graphics Card': '',
+    'Select a Graphics Card': 'off',
     'EVGA - GeForce RTX 2060 XC Ultra Gaming 6GB GDDR6': '6321301',
     'EVGA - GeForce RTX 2070 XC Ultra Gaming 8GB GDDR6': '6290661',
     'EVGA - GeForce RTX 2080 XC GAMING 8GB GDDR6': '6290681',
@@ -29,26 +29,26 @@ const STORE = {
     'XFX - AMD Radeon RX Vega 56 8GB HBM2': '6183041'
   },
   ssd: {
-    'Select a Storage SSD': '',
+    'Select a Storage SSD': 'off',
     'Samsung - 860 EVO 250GB': '6178653',
     'Samsung - 860 EVO 500GB': '6178650',
     'Samsung - 860 EVO 1TB': '6178649'
   },
   psu: {
-    'Select a Power Supply': '',
+    'Select a Power Supply': 'off',
     'CORSAIR - CX-M Series 550W': '5845208',
     'CORSAIR - CX-M Series 650W': '5845214',
     'CORSAIR - CX-M Series 750W': '8324202',
     'CORSAIR - RMx Series 850W': '6229601'
   },
   ram: {
-    'Select a RAM': '',
+    'Select a RAM': 'off',
     'CORSAIR - Vengeance LPX 8GB DDR4': '6256217',
     'CORSAIR - VENGEANCE LPX 16GB DDR4': '5822470',
-    'CORSAIR - Vengeance LPX 32GB DDR4': '4895510'  
+    'CORSAIR - Vengeance LPX 32GB DDR4': '4895510'
   },
   cases: {
-    'Select a Case': '',
+    'Select a Case': 'off',
     'CORSAIR - Carbide Series ATX Mid-Tower Case - Black/Red': '6180328',
     'CORSAIR - Carbide Series SPEC-DELTA RGB ATX Mid-Tower Case - Black': '6323389',
     'CORSAIR - Crystal Series 460X Compact ATX Mid-Tower Case - Black': '5832204',
