@@ -71,6 +71,43 @@ function onDefaultCpu() {
     $("#js-cpu option[value = 'AMD Ryzen 7 2700']").prop('disabled',true);
 }
 
+// function onIntelSelection() {
+//   $('#intel').on('click', function(event) {
+//     event.preventDefault();
+//     emptyCpuMobo();
+//   });
+// }
+//
+// function emptyCpuMobo() {
+//   $('#js-cpu').empty();
+//   $('#js-mobo').empty();
+//   populateIntelCpu();
+//   populateIntelMobo();
+//   console.log('Made it');
+// }
+//
+// function populateIntelCpu() {
+//   const name = Object.keys(STORE);
+//   for (let i = 0; i < name.length; i++) {
+//     const option = document.createElement('option');
+//     option.setAttribute('value', name[i]);
+//     option.text = name[i];
+//     const select = document.getElementById('#js-cpu');
+//     select.appendChild(option);
+//   };
+// }
+//
+// function populateIntelMobo(mobo) {
+//   const name = Object.keys(STORE);
+//   for (let i = 0; i < name.length; i++) {
+//     const option = document.createElement('option');
+//     option.setAttribute('value', name[i]);
+//     option.text = name[i];
+//     const select = document.getElementById('#js-mobo');
+//     select.appendChild(option);
+//   };
+// }
+
 function onIntelSelection() {
   $('#intel').on('click', function() {
     $("#js-mobo option[value = 'ASUS-ROG STRIX B450-F GAMING']").prop('disabled',true);
@@ -252,14 +289,25 @@ function changeFinalPage(priceElements) {
       const el = parseFloat($(element).text(), 10);
       arr.push(el);
     });
+    //getSelection();
     getTotalPrice(arr);
     getYoutubeBuild();
+}
+
+function renderParts(el, priceElements) {
+  $('#js-render-parts').append(`<li>$${priceElements}: ${el}</li>`);
 }
 
 function submitBuild(event) {
   $('#js-pc-parts').submit(function(event) {
     event.preventDefault();
     const priceElements = $(this).find('span');
+    const selectElements = $(this).find('select');
+      selectElements.each((idx, element) => {
+        const el = $(element).find(':selected').text();
+        console.log(el);
+        renderParts(el, priceElements);
+      });
     if (priceElements.length < 7) {
       $('#js-error').html('Missing a PC component, please make sure all selections are made.');
     } else {
