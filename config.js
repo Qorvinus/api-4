@@ -1,6 +1,6 @@
 'use strict'
 
-const ytkey = 'offAIzaSyA33xkrHuTLHRDvibawSxjrekL4GIX66TI';
+const ytkey = 'AIzaSyA33xkrHuTLHRDvibawSxjrekL4GIX66TI';
 
 const ytUrl = 'https://www.googleapis.com/youtube/v3/search';
 
