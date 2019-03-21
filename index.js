@@ -3,7 +3,7 @@
 function startBuild(event) {
   $('#js-start').submit(event => {
     event.preventDefault();
-    $('.js-main-container').empty();
+    $('.js-main-container').addClass('hidden');
     $('.js-render').removeClass('hidden');
     onIntelSelection();
     onAmdSelection();
