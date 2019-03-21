@@ -13,7 +13,6 @@ header {
   width: 100%;
   padding: 15px;
   height: 65px;
-  text-decoration: none !important;
 }
 
 body, html {
@@ -93,9 +92,9 @@ footer {
   margin-top: 20px;
 }
 
-.start-button, .submit-build {
+.start-button, .submit-build, .start-new {
   border-radius: 5px;
-  background: #00B233;
+  background: #75797F;
   padding: 10px 20px 10px 20px;
   font-weight: bold;
   transition: all 0.3s ease;
@@ -112,8 +111,8 @@ main {
   color: red;
 }
 
-.start-button:hover, .submit-build:hover {
-  background: blue;
+.start-button:hover, .submit-build:hover, .start-new:hover {
+  background: #00B233;
 }
 
 .hidden {
@@ -145,15 +144,15 @@ select {
 /* The Modal (background) */
 .modal {
   position: fixed;
-  z-index: 1; 
-  padding-top: 100px; 
+  z-index: 1;
+  padding-top: 100px;
   left: 0;
   top: 0;
   width: 100%;
-  height: 100%; 
-  overflow: auto; 
-  background-color: rgb(0,0,0); 
-  background-color: rgba(0,0,0,0.4); 
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
 }
 
 /* Modal Content */

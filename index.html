@@ -11,6 +11,7 @@
   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
   crossorigin="anonymous"></script>
     <script text="text/javascript" src="database.js"></script>
+    <script text="text/javascript" src="config.js"></script>
   </head>
 
   <body>
@@ -22,10 +23,8 @@
       <p class="welcome col-4">
         Welcome to Build a PC!  Here you'll choose all the necessary parts to assemble a functional PC together.  With each selection you'll be shown some YouTube review videos on that particular product as well as pricing from BestBuy.  After you're all done you'll also be linked to some YouTube videos of how to build a PC.  Good luck and happy building!
       </p>
-        <form id="js-start">
-          <div class="start">
+        <form id="js-start" class="start">
             <input type="submit" value="Build a PC!" class="js-start-button start-button">
-          </div>
         </form>
       </div>
       <div class="js-render render col-4 hidden">
@@ -37,7 +36,7 @@
             <label for="amd" class="hover">
               <input type="radio" id="amd" name="cpuType" value="AMD">
               <span>AMD</span>
-            </label>  
+            </label>
         <form id="js-pc-parts">
           <label for="cpu" class="select">Select a CPU</label>
             <select name="cpu" id="js-cpu" class="drop-down" required>
@@ -81,7 +80,8 @@
       <div class="js-finish finish col-4 hidden">
         <p>Here are some "How to build a PC" videos!  Good luck and happy building!</p>
         <div id="js-render-info"></div>
-        <div id="js-render-total-price"><div>
+        <div id="js-render-total-price"></div>
+        <input type="submit" value="Build another?" class="js-start-new start-new">
       </div>
     </main>
       <div id="myModal" class="modal hidden">

@@ -1,18 +1,5 @@
 'use strict'
 
-//https:www.googleapis.com/youtube/v3/search?q=query&part=snippet&masResults=3&key=ytkey
-//responseJson.items.thumbnail.default or medium or high.url => thumbnail
-//responseJson.items.id.videoId => https://www.youtube.com/embed/videoId
-const ytkey = 'AIzaSyA33xkrHuTLHRDvibawSxjrekL4GIX66TI';
-
-const ytUrl = 'https://www.googleapis.com/youtube/v3/search';
-
-//https://api.bestbuy.com/v1/products/sku.json?apiKey=bbkey
-//responseJson.regularPrice => price
-const bbkey = 'tRN7x3ANSvBOc14AAe9lhXb3';
-
-const bbUrl = 'https://api.bestbuy.com/v1/products/';
-
 function startBuild(event) {
   $('#js-start').submit(event => {
     event.preventDefault();
@@ -199,11 +186,6 @@ function closeModal() {
     $('#myModal').addClass('hidden');
     stopModalVideo();
   });
-  // $(document).on('click', function(event) {
-  //   if (!$(event.target).closest('.modal').length) {
-  //     $('body').find('.modal').addClass('hidden');
-  //   };
-  // });
 }
 
 function stopModalVideo() {
@@ -276,17 +258,8 @@ function submitBuild(event) {
     } else {
     changeFinalPage(priceElements);
     startNew();
-    addHover();
     };
   });
-}
-
-function addHover() {
-  $('.js-header').addClass('hover');
-}
-
-function removeHover() {
-  $('.js-header').removeClass('hover');
 }
 
 function resetSelection() {
@@ -303,13 +276,12 @@ function resetRender() {
 }
 
 function startNew() {
-  $('.js-header').on('click', function(event) {
+  $('.js-start-new').on('click', function(event) {
     event.preventDefault();
     $('.js-finish').addClass('hidden');
     $('.js-render').removeClass('hidden');
     resetSelection();
     resetRender();
-    removeHover();
     onIntelSelection();
     onAmdSelection();
     listenSelection();
