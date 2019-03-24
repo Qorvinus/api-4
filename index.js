@@ -55,97 +55,38 @@ function populateItem(type) {
 }
 
 function onDefaultCpu() {
-    $("#js-mobo option[value = 'ASUS-ROG STRIX B450-F GAMING']").prop('disabled',true);
-    $("#js-mobo option[value = 'ASUS-TUF X470-PLUS GAMING']").prop('disabled',true);
-    $("#js-mobo option[value = 'ASUS-ROG CROSSHAIR VII HERO']").prop('disabled',true);
-    // disable these
-    $("#js-mobo option[value = 'ASUS-ROG STRIX H370-F GAMING']").prop('disabled',false);
-    $("#js-mobo option[value = 'ASUS-TUF Z390-PLUS GAMING']").prop('disabled',false);
-    $("#js-mobo option[value = 'ASUS-ROG MAXIMUS XI HERO']").prop('disabled',false);
-    //cpus
-    $("#js-cpu option[value = 'Intel i3-8100']").prop('disabled',false);
-    $("#js-cpu option[value = 'Intel i5-8400']").prop('disabled',false);
-    $("#js-cpu option[value = 'Intel i7-8700']").prop('disabled',false);
-    // disable these
-    $("#js-cpu option[value = 'AMD Ryzen 5 2600']").prop('disabled',true);
-    $("#js-cpu option[value = 'AMD Ryzen 7 2700']").prop('disabled',true);
+  const type = 'intel';
+  onCpuSelection(type);
 }
-
-// function onIntelSelection() {
-//   $('#intel').on('click', function(event) {
-//     event.preventDefault();
-//     emptyCpuMobo();
-//   });
-// }
-//
-// function emptyCpuMobo() {
-//   $('#js-cpu').empty();
-//   $('#js-mobo').empty();
-//   populateIntelCpu();
-//   populateIntelMobo();
-//   console.log('Made it');
-// }
-//
-// function populateIntelCpu() {
-//   const name = Object.keys(STORE);
-//   for (let i = 0; i < name.length; i++) {
-//     const option = document.createElement('option');
-//     option.setAttribute('value', name[i]);
-//     option.text = name[i];
-//     const select = document.getElementById('#js-cpu');
-//     select.appendChild(option);
-//   };
-// }
-//
-// function populateIntelMobo(mobo) {
-//   const name = Object.keys(STORE);
-//   for (let i = 0; i < name.length; i++) {
-//     const option = document.createElement('option');
-//     option.setAttribute('value', name[i]);
-//     option.text = name[i];
-//     const select = document.getElementById('#js-mobo');
-//     select.appendChild(option);
-//   };
-// }
 
 function onIntelSelection() {
   $('#intel').on('click', function() {
-    $("#js-mobo option[value = 'ASUS-ROG STRIX B450-F GAMING']").prop('disabled',true);
-    $("#js-mobo option[value = 'ASUS-TUF X470-PLUS GAMING']").prop('disabled',true);
-    $("#js-mobo option[value = 'ASUS-ROG CROSSHAIR VII HERO']").prop('disabled',true);
-    // disable these
-    $("#js-mobo option[value = 'ASUS-ROG STRIX H370-F GAMING']").prop('disabled',false);
-    $("#js-mobo option[value = 'ASUS-TUF Z390-PLUS GAMING']").prop('disabled',false);
-    $("#js-mobo option[value = 'ASUS-ROG MAXIMUS XI HERO']").prop('disabled',false);
-    //cpus
-    $("#js-cpu option[value = 'Intel i3-8100']").prop('disabled',false);
-    $("#js-cpu option[value = 'Intel i5-8400']").prop('disabled',false);
-    $("#js-cpu option[value = 'Intel i7-8700']").prop('disabled',false);
-    // disable these
-    $("#js-cpu option[value = 'AMD Ryzen 5 2600']").prop('disabled',true);
-    $("#js-cpu option[value = 'AMD Ryzen 7 2700']").prop('disabled',true);
-    resetCpuMobo();
+    const type = 'intel';
+    onCpuSelection(type);
   });
 }
 
 function onAmdSelection() {
-  $('#amd').on('click', function () {
-    $("#js-mobo option[value = 'ASUS-ROG STRIX B450-F GAMING']").prop('disabled',false);
-    $("#js-mobo option[value = 'ASUS-TUF X470-PLUS GAMING']").prop('disabled',false);
-    $("#js-mobo option[value = 'ASUS-ROG CROSSHAIR VII HERO']").prop('disabled',false);
-    // enable these
-    $("#js-mobo option[value = 'ASUS-ROG STRIX H370-F GAMING']").prop('disabled',true);
-    $("#js-mobo option[value = 'ASUS-TUF Z390-PLUS GAMING']").prop('disabled',true);
-    $("#js-mobo option[value = 'ASUS-ROG MAXIMUS XI HERO']").prop('disabled',true);
-    //cpus
-    $("#js-cpu option[value = 'Intel i3-8100']").prop('disabled',true);
-    $("#js-cpu option[value = 'Intel i5-8400']").prop('disabled',true);
-    $("#js-cpu option[value = 'Intel i7-8700']").prop('disabled',true);
-    // disable these
-    $("#js-cpu option[value = 'AMD Ryzen 5 2600']").prop('disabled',false);
-    $("#js-cpu option[value = 'AMD Ryzen 7 2700']").prop('disabled',false);
-    resetCpuMobo();
+  $('#amd').on('click', function() {
+    const type = 'amd';
+    onCpuSelection(type);
   });
+}
+
+function onCpuSelection(type) {
+  const val = type === 'intel' ? true : false;
+  $("#js-mobo option[value = 'ASUS-ROG STRIX B450-F GAMING']").prop('disabled', val);
+  $("#js-mobo option[value = 'ASUS-TUF X470-PLUS GAMING']").prop('disabled', val);
+  $("#js-mobo option[value = 'ASUS-ROG CROSSHAIR VII HERO']").prop('disabled', val);
+  $("#js-mobo option[value = 'ASUS-ROG STRIX H370-F GAMING']").prop('disabled', !val);
+  $("#js-mobo option[value = 'ASUS-TUF Z390-PLUS GAMING']").prop('disabled', !val);
+  $("#js-mobo option[value = 'ASUS-ROG MAXIMUS XI HERO']").prop('disabled', !val);
+  $("#js-cpu option[value = 'Intel i3-8100']").prop('disabled', !val);
+  $("#js-cpu option[value = 'Intel i5-8400']").prop('disabled', !val);
+  $("#js-cpu option[value = 'Intel i7-8700']").prop('disabled', !val);
+  $("#js-cpu option[value = 'AMD Ryzen 5 2600']").prop('disabled', val);
+  $("#js-cpu option[value = 'AMD Ryzen 7 2700']").prop('disabled', val);
+  resetCpuMobo();
 }
 
 function resetCpuMobo() {
@@ -272,7 +213,7 @@ function getSum(total, num) {
 }
 
 function renderTotalPrice(finalPrice) {
-  $('#js-render-total-price').html(`<div>Total price: $${finalPrice}</div><div>Price does not include the prices associated with an operating system.</div>`);
+  $('#js-render-total-price').html(`<div>Total price: $${finalPrice}</div><div>Price does not include the prices associated with an operating system nor does it include any sales tax.</div>`);
 }
 
 function getYoutubeBuild() {
@@ -289,30 +230,32 @@ function changeFinalPage(priceElements) {
       const el = parseFloat($(element).text(), 10);
       arr.push(el);
     });
-    //getSelection();
     getTotalPrice(arr);
     getYoutubeBuild();
 }
 
-function renderParts(el, priceElements) {
-  $('#js-render-parts').append(`<li>$${priceElements}: ${el}</li>`);
+function renderParts(el) {
+  $('#js-render-parts').append(`<li>${el}</li>`);
+}
+
+function splitContent(selectElements) {
+  selectElements.each((idx, element) => {
+    const el = $(element).find(':selected').text();
+    renderParts(el);
+  });
 }
 
 function submitBuild(event) {
   $('#js-pc-parts').submit(function(event) {
     event.preventDefault();
-    const priceElements = $(this).find('span');
-    const selectElements = $(this).find('select');
-      selectElements.each((idx, element) => {
-        const el = $(element).find(':selected').text();
-        console.log(el);
-        renderParts(el, priceElements);
-      });
+      const priceElements = $(this).find('span');
     if (priceElements.length < 7) {
       $('#js-error').html('Missing a PC component, please make sure all selections are made.');
     } else {
-    changeFinalPage(priceElements);
-    startNew();
+      const selectElements = $(this).find('select');
+      splitContent(selectElements)
+      changeFinalPage(priceElements);
+      startNew();
     };
   });
 }
@@ -327,7 +270,8 @@ function resetRender() {
   Object.keys(STORE).forEach(type => {
     $(`#js-render-${type}`).empty();
     $(`#js-render-${type}-price`).empty();
-  })
+    $('#js-error').empty();
+  });
 }
 
 function startNew() {
